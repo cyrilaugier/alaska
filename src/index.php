@@ -8,14 +8,12 @@ $config = array(
 );
 
 
-try
-{
+try {
     $database = new PDO(
         "mysql:host=".$config["host"].";dbname=".$config["database"].";charset=utf8",
         $config["user"],
         $config["password"]
     );
-} catch (Exception $error)
-{
+} catch (Exception $error) {
     die("Erreur : " . $error->getMessage());
 }
