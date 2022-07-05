@@ -6,4 +6,8 @@ lint:
 server:
 	php -S localhost:8080 -t src -d display_errors=1 -d error_reporting=E_ALL
 
-.PHONY: all lint server
+tags:
+	@rm -f tags
+	@ctags -R src
+
+.PHONY: all lint server tags
