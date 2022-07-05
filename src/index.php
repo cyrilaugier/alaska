@@ -1,7 +1,19 @@
 <?php
 
-require("model.php");
+$config = array(
+    "host" => "localhost",
+    "user" => "alaska",
+    "password" => "password",
+    "database" => "alaska_database",
+);
 
-$articles = getPosts();
+require("models/database.php");
 
-require("view.php");
+$database = new Database(
+    $config["host"],
+    $config["user"],
+    $config["password"],
+    $config["database"]
+);
+
+$database->connect();
